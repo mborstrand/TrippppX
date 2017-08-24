@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Trippp.View;
 using Xamarin.Forms;
 
 namespace Trippp
@@ -13,10 +13,21 @@ namespace Trippp
 		{
 			InitializeComponent();
 
-			MainPage = new Trippp.MainPage();
+            MainPage = Start();
 		}
 
-		protected override void OnStart ()
+
+        private NavigationPage Start()
+        {
+            var page = new NavigationPage(new StartPage())
+            {
+                Title = "Avgångar",
+                Icon = null
+            };
+            return page;
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}
